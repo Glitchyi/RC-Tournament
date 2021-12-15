@@ -19,11 +19,15 @@ void setup(){
 
   pinMode(EN_A, OUTPUT);  // EN A1
   pinMode(INP_A1, OUTPUT);  // INP A1
-  pinMode(6, OUTPUT); // INP A1
-
-  pinMode(15,OUTPUT); // EN B1
-  pinMode(4,OUTPUT);  // IN1 B1
-  pinMode(2,OUTPUT);  // IN2 B1
+  pinMode(INP_A2, OUTPUT); // INP A1
+  ledcAttachPin(EN_A,0);
+  ledcSetup(0,5000,8);
+  
+  pinMode(EN_B,OUTPUT); // EN B1
+  pinMode(INP_B1,OUTPUT);  // IN1 B1
+  pinMode(INP_B2,OUTPUT);  // IN2 B1
+  ledcAttachPin(EN_B,1);
+  ledcSetup(1,5000,8);
 }
 
 void loop() {
@@ -67,84 +71,84 @@ void loop() {
 
   }else if (yval==1 && xval < 4 && xval > -4){
     
-    ledcWrite(EN_A, speed1);  //for controlling the speed of the motor
+    ledcWrite(0, speed1);  //for controlling the speed of the motor
 
     digitalWrite(INP_A1, LOW); //for controlling the direction of the motor
     digitalWrite(INP_A2, HIGH); 
     
-    ledcWrite(EN_B, speed1); //for controlling the speed of the motor
+    ledcWrite(1, speed1); //for controlling the speed of the motor
 
     digitalWrite(INP_B1, HIGH); //for controlling the direction of the motor
     digitalWrite(INP_B2, LOW); 
 
   }else if (yval==2 && xval < 4 && xval > -4){
 
-    ledcWrite(EN_A, speed2);  //for controlling the speed of the motor
+    ledcWrite(0, speed2);  //for controlling the speed of the motor
 
     digitalWrite(INP_A1, LOW); //for controlling the direction of the motor
     digitalWrite(INP_A2, HIGH); 
     
-    ledcWrite(EN_B, speed2); //for controlling the speed of the motor
+    ledcWrite(1, speed2); //for controlling the speed of the motor
 
     digitalWrite(INP_B1, HIGH); //for controlling the direction of the motor
     digitalWrite(INP_B2, LOW); 
 
   }else if (yval==3 && xval < 4 && xval > -4){
 
-    ledcWrite(EN_A, speed3);  //for controlling the speed of the motor
+    ledcWrite(0, speed3);  //for controlling the speed of the motor
 
     digitalWrite(INP_A1, LOW); //for controlling the direction of the motor
     digitalWrite(INP_A2, HIGH); 
     
-    ledcWrite(EN_B, speed3); //for controlling the speed of the motor
+    ledcWrite(1, speed3); //for controlling the speed of the motor
 
     digitalWrite(INP_B1, HIGH); //for controlling the direction of the motor
     digitalWrite(INP_B2, LOW); 
 
   }else if ((yval==4 && xval < 4 && xval > -4)){
 
-    ledcWrite(EN_A, speed4);  //for controlling the speed of the motor
+    ledcWrite(0, speed4);  //for controlling the speed of the motor
 
     digitalWrite(INP_A1, LOW); //for controlling the direction of the motor
     digitalWrite(INP_A2, HIGH); 
     
-    ledcWrite(EN_B, speed4); //for controlling the speed of the motor
+    ledcWrite(1, speed4); //for controlling the speed of the motor
 
     digitalWrite(INP_B1, HIGH); //for controlling the direction of the motor
     digitalWrite(INP_B2, LOW); 
 
   }else if ((yval==5 && xval < 4 && xval > -4)){
 
-    ledcWrite(EN_A, speed5);  //for controlling the speed of the motor
+    ledcWrite(0, speed5);  //for controlling the speed of the motor
 
     digitalWrite(INP_A1, LOW); //for controlling the direction of the motor
     digitalWrite(INP_A2, HIGH); 
     
-    ledcWrite(EN_B, speed5); //for controlling the speed of the motor
+    ledcWrite(1, speed5); //for controlling the speed of the motor
 
     digitalWrite(INP_B1, HIGH); //for controlling the direction of the motor
     digitalWrite(INP_B2, LOW); 
 
   }else if ((yval==6 && xval < 4 && xval > -4)){
 
-    ledcWrite(EN_A, speed6);  //for controlling the speed of the motor
+    ledcWrite(0, speed6);  //for controlling the speed of the motor
 
     digitalWrite(INP_A1, LOW); //for controlling the direction of the motor
     digitalWrite(INP_A2, HIGH); 
     
-    ledcWrite(EN_B, speed6); //for controlling the speed of the motor
+    ledcWrite(1, speed6); //for controlling the speed of the motor
 
     digitalWrite(INP_B1, HIGH); //for controlling the direction of the motor
     digitalWrite(INP_B2, LOW); 
 
   }else if ((yval==7 && xval < 4 && xval > -4)){
 
-    ledcWrite(EN_A, speed7);  //for controlling the speed of the motor
+    ledcWrite(0, speed7);  //for controlling the speed of the motor
 
     digitalWrite(INP_A1, LOW); //for controlling the direction of the motor
     digitalWrite(INP_A2, HIGH); 
     
-    ledcWrite(EN_B, speed7); //for controlling the speed of the motor
+    ledcWrite(1, speed7); //for controlling the speed of the motor
 
     digitalWrite(INP_B1, HIGH); //for controlling the direction of the motor
     digitalWrite(INP_B2, LOW); 
