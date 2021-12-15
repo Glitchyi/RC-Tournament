@@ -1,5 +1,4 @@
 #include<DabbleESP32.h>
-#include<Arduino.h>
 #define CUSTOM_SETTINGS
 #define INCLUDE_GAMEPAD_MODULE
 int INP_B1=2;
