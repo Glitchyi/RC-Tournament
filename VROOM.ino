@@ -31,21 +31,19 @@ void setup(){
 }
 
 void loop() {
-  int speed0=0;
-  int speed1=37;
-  int speed2=74;
-  int speed3=111;
-  int speed4=148;
-  int speed5=185;
-  int speed6=222;
-  int speed7=255;
-
+  int speed=36;
+  
   Dabble.processInput();
   int xval = GamePad.getXaxisData(); // get x-axis data
   int yval = GamePad.getYaxisData(); // get y-axis data
-
+  
+ 
+  
   if (GamePad.isTrianglePressed()){ // TURN LEFT
-
+    
+    ledcWrite(0, speed*7);  //for controlling the speed of the motor A
+    ledcWrite(1, speed*7);  //for controlling the speed of the motor B
+    
     digitalWrite(EN_A, HIGH);  //for controlling the speed of the motor
 
     digitalWrite(INP_A1, HIGH); //for controlling the direction of the motor
@@ -56,9 +54,14 @@ void loop() {
     //digitalWrite(INP_B1, HIGH); //for controlling the direction of the motor
     //digitalWrite(INP_B2, LOW); 
     delay(1000);
-
-
-
+  }
+   if (yval>0){
+    ledcWrite(0, speed*yval);  //for controlling the speed of the motor A
+    ledcWrite(1, speed*yval);  //for controlling the speed of the motor B
+  }
+   if (xval>0){
+    ledcWrite(0, speed*xval);  //for controlling the speed of the motor A
+    ledcWrite(1, speed*xval);  //for controlling the speed of the motor B
   }
 
   if(yval==0 && xval < 4 && xval > -4){
@@ -71,8 +74,6 @@ void loop() {
 
   }else if (yval==1 && xval < 4 && xval > -4){
     
-    ledcWrite(0, speed1);  //for controlling the speed of the motor
-
     digitalWrite(INP_A1, LOW); //for controlling the direction of the motor
     digitalWrite(INP_A2, HIGH); 
     
